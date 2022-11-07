@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       responseData => {
         this.model = <any> responseData.body;
         let xsrf = getCookie('XSRF-TOKEN')!;
-        window.sessionStorage.setItem('XSRF-TOKEN', xsrf);
+        window.sessionStorage.setItem("XSRF-TOKEN", xsrf);
         this.model.authStatus = 'AUTH';
         window.sessionStorage.setItem("userdetails",JSON.stringify(this.model));
         this.router.navigate(['dashboard']);
